@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binks Trade</title>
-</head>
-<body>
-    
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-left">
+        <span>Binks Trade</span>
+      </div>
+
+      <div class="header-center">
+        <input type="search" placeholder="Find a stock worth sailing for" class="search-bar" />
+      </div>
+
+      <div class="header-right">
+        <div class="funds" title="Voyage funds remaining">
+          <i data-lucide="coins"></i>
+          <span>₹98,450</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav></nav>
+      <div class="main-content"></div>
+    </main>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+
+  </body>
 </html>
