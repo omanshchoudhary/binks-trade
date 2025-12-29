@@ -9,6 +9,7 @@ body {
     width: 100vw;
     background-color: #18191b;
     font-family: "Inter", sans-serif;
+    color: #FFFFFF;
 }
 
 header {
@@ -54,8 +55,8 @@ header {
 
 main {
     display: flex;
-    flex-direction: column;
     height: calc(100vh - 80px);
+    width: 100%;
 }
 
 .sidebar{
@@ -67,4 +68,57 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: calc(100vw - 200px);
+}
+
+.market-overview-grid {
+    width: 100%;
+    display: flex;
+    height: 100px;
+    padding: 0px 20px 0px;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid white;
+
+}
+
+
+.market-stats {
+    display: flex;
+    flex:1;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.gainer-looser {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-loosers, .top-gainers {
+    display: grid;
+    width: 400px;
+    padding: 50px;
+    grid-template-columns: 150px 150px;
+    row-gap: 20px;
+    column-gap: 20px;
+    border: 2px solid white;
+}
+
+.gainer-item, .looser-item {
+    border: 1px solid white;
+}
+
+.trending-stocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
 }

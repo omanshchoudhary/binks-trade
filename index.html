@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +20,11 @@
       </div>
 
       <div class="header-center">
-        <input type="search" placeholder="Find a stock worth sailing for" class="search-bar" />
+        <input
+          type="search"
+          placeholder="Find a stock worth sailing for"
+          class="search-bar"
+        />
       </div>
 
       <div class="header-right">
@@ -38,22 +41,146 @@
         <a href="dashboard.html">Dashboard</a>
         <a>Profile</a>
       </nav>
+
       <div class="main-content">
         <div class="market-overview-grid">
-          <div class="overview-item"></div>
+          <div class="overview-item">
+            <span>Sensex</span>
+            <div>
+              <span>78,472.48</span>
+              <span>+1.24%</span>
+            </div>
+          </div>
+          <div class="overview-item">
+            <span>Nifty 50</span>
+            <div>
+              <span>23,813.40</span>
+              <span>+0.98%</span>
+            </div>
+          </div>
+          <div class="overview-item">
+            <span>Bank Nifty</span>
+            <div>
+              <span>51,245.60</span>
+              <span>-0.45%</span>
+            </div>
+          </div>
+          <div class="overview-item">
+            <span>Nifty IT</span>
+            <div>
+              <span>42,180.25</span>
+              <span>+1.87%</span>
+            </div>
+          </div>
         </div>
+
         <div class="market-stats">
-          <div class="gainer-looser"></div>
-          <div class="trending-stocks"></div>
+          <div class="gainer-looser">
+            <div class="top-gainers">
+              <div class="gainer-item">
+                <span>Tata Motors</span>
+                <div>
+                  <span>₹1,012.50</span>
+                  <span >+3.14%</span>
+                </div>
+              </div>
+              <div class="gainer-item">
+                <span>JSW Steel</span>
+                <div>
+                  <span>₹885.20</span>
+                  <span class="positive">+2.48%</span>
+                </div>
+              </div>
+              <div class="gainer-item">
+                <span>Coal India</span>
+                <div>
+                  <span>₹374.80</span>
+                  <span class="positive">+1.92%</span>
+                </div>
+              </div>
+              <div class="gainer-item">
+                <span>Larsen & Toubro</span>
+                <div>
+                  <span>₹3,215.40</span>
+                  <span class="positive">+1.36%</span>
+                </div>
+              </div>
+            </div>
+            <div class="top-loosers">
+              <div class="looser-item">
+                <span>HDFC Life</span>
+                <div>
+                  <span>₹642.30</span>
+                  <span class="negative">-2.21%</span>
+                </div>
+              </div>
+              <div class="looser-item">
+                <span>NTPC</span>
+                <div>
+                  <span>₹301.10</span>
+                  <span class="negative">-1.47%</span>
+                </div>
+              </div>
+              <div class="looser-item">
+                <span>ITC</span>
+                <div>
+                  <span>₹461.75</span>
+                  <span class="negative">-0.98%</span>
+                </div>
+              </div>
+              <div class="looser-item">
+                <span>Mahindra & Mahindra</span>
+                <div>
+                  <span>₹1,732.90</span>
+                  <span class="negative">-0.73%</span>
+                </div>
+              </div>              
+            </div>
+          </div>
+          <div class="trending-stocks">
+            <div class="trending-item">
+              <span>Reliance</span>
+              <div>
+                <span>51,245.60</span>
+                <span>-0.45%</span>
+              </div>
+            </div>
+            <div class="trending-item">
+              <span>TCS</span>
+              <div>
+                <span>3,785.20</span>
+                <span>+0.62%</span>
+              </div>
+            </div>
+            <div class="trending-item">
+              <span>HDFC Bank</span>
+              <div>
+                <span>1,595.40</span>
+                <span>-0.12%</span>
+              </div>
+            </div>
+            <div class="trending-item">
+              <span>Infosys</span>
+              <div>
+                <span>1,483.75</span>
+                <span>+1.05%</span>
+              </div>
+            </div>
+            <div class="trending-item">
+              <span>ICICI Bank</span>
+              <div>
+                <span>990.10</span>
+                <span>+0.34%</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
-
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       lucide.createIcons();
     </script>
-
   </body>
 </html>
