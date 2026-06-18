@@ -14,6 +14,10 @@ out/
 .env
 .env.local
 .env.*.local
+*.local
+
+# Caches
+.eslintcache
 
 # Logs
 *.log
