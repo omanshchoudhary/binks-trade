@@ -1,0 +1,9 @@
+{
+  "//": "Root solution file — references each workspace so `tsc -b` builds the whole graph and editors resolve project boundaries.",
+  "files": [],
+  "references": [
+    { "path": "packages/types" },
+    { "path": "apps/api" },
+    { "path": "apps/web" }
+  ]
+}
