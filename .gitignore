@@ -32,3 +32,9 @@ coverage/
 .vscode/*
 !.vscode/extensions.json
 *.swp
+
+# Prisma generated client
+packages/db/generated/
+
+# Docs
+learnings.txt
