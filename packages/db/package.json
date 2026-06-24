@@ -13,6 +13,7 @@
     "generate": "prisma generate",
     "migrate": "prisma migrate dev",
     "migrate:deploy": "prisma migrate deploy",
+    "seed": "tsx prisma/seed.ts",
     "studio": "prisma studio",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf generated dist *.tsbuildinfo"
@@ -27,6 +28,7 @@
     "dotenv": "^17.4.2",
     "prisma": "^7.8.0",
     "rimraf": "^6.1.3",
+    "tsx": "^4.22.4",
     "typescript": "^5.9.3"
   }
 }
