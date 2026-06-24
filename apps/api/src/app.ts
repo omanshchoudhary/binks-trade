@@ -25,6 +25,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+
+// Routers
+import sharesRouter from './routes/shares.js'
+
+app.use('/shares', sharesRouter);
 app.get("/health", (_req, res) => {
     res.json({ status: "OK" });
 });
