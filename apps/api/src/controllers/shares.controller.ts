@@ -7,10 +7,13 @@ export async function getAllShares(_req: Request, res: Response, next: NextFunct
 
         return res.status(200).json({
             success: true,
-            data: shares
+            data: shares.map((share) => ({
+                ...share,
+                changePercent:
+                    ((Number(share.currentPrice) - Number(share.previousClose)) / Number(share.previousClose)) * 100
+            }))
         })
     } catch (err) {
         next(err);
     }
-
 }
