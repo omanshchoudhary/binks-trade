@@ -1,10 +1,10 @@
 {
   "extends": "@binks/tsconfig/node.json",
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "./dist",
-    "noEmit": true
+    "composite": false,
+    "noEmit": true,
+    "rootDir": "."
   },
-  "include": ["prisma.config.ts", "prisma/**/*.ts"],
+  "include": ["src/**/*.ts", "prisma.config.ts"],
   "exclude": ["node_modules", "dist", "generated"]
 }
