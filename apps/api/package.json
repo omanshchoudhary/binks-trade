@@ -12,7 +12,9 @@
     "clean": "rimraf dist *.tsbuildinfo"
   },
   "dependencies": {
+    "@binks/db": "^0.0.0",
     "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
