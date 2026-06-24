@@ -39,6 +39,7 @@ model Share {
   week52High     Decimal         @db.Decimal(12, 2)
   week52Low      Decimal         @db.Decimal(12, 2)
   currentPrice   Decimal         @db.Decimal(12, 2)
+  previousClose  Decimal         @db.Decimal(12, 2)
   priceUpdatedAt DateTime        @default(now())
   watchlistItems WatchlistItem[]
   holdings       Holding[]
