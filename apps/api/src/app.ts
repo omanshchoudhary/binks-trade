@@ -26,12 +26,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 
-// Routers
 import sharesRouter from './routes/shares.js'
+import authRouter from './routes/auth.js'
+import { errorHandler, notFound } from "./middlewares/error.js";
 
+
+// Routers
 app.use('/shares', sharesRouter);
+app.use('/auth', authRouter);
+
+
 app.get("/health", (_req, res) => {
     res.json({ status: "OK" });
 });
+
+app.use(notFound)
+app.use(errorHandler);
 
 export default app;
