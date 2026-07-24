@@ -22,13 +22,15 @@ model User {
   id           String          @id @default(cuid())
   name         String
   username     String          @unique
-  passwordHash String
+  passwordHash String?
   email        String          @unique
   createdAt    DateTime        @default(now())
   updatedAt    DateTime        @updatedAt
   portfolio    Portfolio?
   orders       Order[]
   watchlist    WatchlistItem[]
+  sessions     Session[]
+  accounts     Account[]
 }
 
 model Share {
@@ -94,4 +96,28 @@ model Order {
   executedAt    DateTime?
   user          User        @relation(fields: [userId], references: [id])
   share         Share       @relation(fields: [shareId], references: [id])
+}
+
+model Session {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+  revokedAt DateTime?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Account {
+  id             String   @id @default(cuid())
+  userId         String
+  provider       String
+  providerUserId String
+  createdAt      DateTime @default(now())
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerUserId])
+  @@index([userId])
 }
