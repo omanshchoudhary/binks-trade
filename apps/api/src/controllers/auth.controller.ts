@@ -1,6 +1,6 @@
 import type { SignupInput, LoginInput } from "@binks/types";
 import type { Request, Response } from "express";
-import { createSession, createUser, revokeSession, verifyCredentials } from "../services/auth.service.js";
+import { createSession, createUser, getUserById, revokeSession, verifyCredentials } from "../services/auth.service.js";
 
 export async function signup(req: Request, res: Response) {
     const data = req.body as SignupInput;
@@ -58,4 +58,30 @@ export async function logout(req: Request, res: Response) {
     });
 
     return res.status(200).json({ success: true });
+}
+
+
+export async function me(req: Request, res: Response) {
+    const id = req.user?.id;
+
+    if (!id) {
+        return res.status(401).json({
+            success: false,
+            error: "Unauthorized",
+        });
+    }
+
+    const user = await getUserById(id);
+
+    if (!user) {
+        return res.status(401).json({
+            success: false,
+            error: "Unauthorized",
+        });
+    }
+
+    return res.status(200).json({
+        success: true,
+        data: user,
+    });
 }

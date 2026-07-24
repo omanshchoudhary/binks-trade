@@ -32,6 +32,19 @@ export async function createUser(input: SignupInput) {
 }
 
 
+export async function getUserById(id: string) {
+    return prisma.user.findUnique({
+        where: { id },
+        select: {
+            id: true,
+            name: true,
+            username: true,
+            email: true,
+            createdAt: true,
+        },
+    });
+}
+
 export async function verifyCredentials(input: LoginInput) {
     const user = await prisma.user.findUnique({
         where: { email: input.email }
