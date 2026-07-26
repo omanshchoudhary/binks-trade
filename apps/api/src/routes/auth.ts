@@ -14,9 +14,9 @@ const authLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-router.post('/signup',authLimiter,validate(signupSchema),signup)
-router.post('/login',authLimiter,validate(loginSchema),login)
-router.post('/logout',logout)
-router.get('/me',authenticate, me)
+router.post('/signup', authLimiter, validate(signupSchema), signup)
+router.post('/login', authLimiter, validate(loginSchema), login)
+router.post('/logout', logout)
+router.get('/me', authenticate, me)
 
 export default router;
