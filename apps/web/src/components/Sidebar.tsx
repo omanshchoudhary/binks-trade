@@ -1,28 +1,31 @@
+import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "/", active: true },
-  { label: "Dashboard", href: "/dashboard", active: false },
-  { label: "Profile", href: "/profile", active: false },
+  { label: "Home", to: "/" },
+  { label: "Dashboard", to: "/dashboard" },
+  { label: "Profile", to: "/profile" },
 ];
 
 export function Sidebar() {
   return (
     <aside className="sidebar">
-      <a className="sidebar__brand" href="/">
+      <NavLink className="sidebar__brand" to="/">
         <img className="sidebar__logo" src="/assets/images/logo.png" alt="" />
         <span className="sidebar__name">Binks Trade</span>
-      </a>
+      </NavLink>
       <nav className="sidebar__nav">
         {NAV_ITEMS.map((item) => (
-          <a
+          <NavLink
             key={item.label}
-            href={item.href}
-            className={`sidebar__link${item.active ? " is-active" : ""}`}
-            aria-current={item.active ? "page" : undefined}
+            to={item.to}
+            end
+            className={({ isActive }) =>
+              `sidebar__link${isActive ? " is-active" : ""}`
+            }
           >
             {item.label}
-          </a>
+          </NavLink>
         ))}
       </nav>
       <p className="sidebar__note">Virtual trading · NSE</p>
