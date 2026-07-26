@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState, type ReactNode } from "react";
+import type { User } from "@binks/types";
 import { api } from "../lib/api";
-import { AuthContext, type AuthContextValue, type User } from "./auth";
+import { AuthContext, type AuthContextValue } from "./auth";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
