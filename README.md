@@ -43,9 +43,9 @@ Reads fall back down that chain: cache, then Postgres, then the external feed if
 the stored price is too old. User data, holdings, and orders only ever touch
 Postgres.
 
-The latency budget for prices is 10 to 15 seconds. That is comfortably pollable,
-so the transport for price updates is still an open decision rather than an
-automatic WebSocket.
+Prices are delayed rather than live, so the feed is polled on a schedule and the
+transport for pushing updates to the client is still an open decision rather than
+an automatic WebSocket.
 
 ### Request path
 
