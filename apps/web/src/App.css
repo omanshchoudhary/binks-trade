@@ -43,6 +43,16 @@
   gap: 14px;
 }
 
+.market__status {
+  margin-top: 22px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.market__status--error {
+  color: var(--down);
+}
+
 .panel {
   position: sticky;
   top: 84px;

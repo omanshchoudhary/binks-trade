@@ -1,9 +1,9 @@
 import "./StockCard.css";
 import { ChangeBadge } from "./ChangeBadge";
 import { formatPrice } from "../utils/format";
-import type { Stock } from "../data/mockData";
+import type { Share } from "@binks/types";
 
-export function StockCard({ stock }: { stock: Stock }) {
+export function StockCard({ stock }: { stock: Share }) {
   return (
     <a className="stock-card" href={`/stock/${stock.symbol}`}>
       <div className="stock-card__head">

@@ -1,9 +1,9 @@
 import "./TrendingItem.css";
 import { ChangeBadge } from "./ChangeBadge";
 import { formatPrice } from "../utils/format";
-import type { Stock } from "../data/mockData";
+import type { Share } from "@binks/types";
 
-export function TrendingItem({ stock }: { stock: Stock }) {
+export function TrendingItem({ stock }: { stock: Share }) {
   return (
     <a className="trend-item" href={`/stock/${stock.symbol}`}>
       <div className="trend-item__id">
