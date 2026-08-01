@@ -1,13 +1,11 @@
-import { useState, type FormEvent } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { signupSchema } from "@binks/types";
 import { useAuth } from "../hooks/useAuth";
+import { useShares } from "../hooks/useShares";
 import { ApiError } from "../lib/api";
-import { topGainers, topLosers } from "../data/mockData";
 import { formatPercent, formatPrice } from "../utils/format";
 import "./Auth.css";
-
-const PREVIEW = [...topGainers.slice(0, 3), ...topLosers.slice(0, 2)];
 
 type FieldErrors = Partial<
   Record<"name" | "username" | "email" | "password", string>
@@ -15,7 +13,18 @@ type FieldErrors = Partial<
 
 export function Signup() {
   const { user, loading, signup } = useAuth();
+  const { shares } = useShares();
   const navigate = useNavigate();
+
+  const preview = useMemo(() => {
+    const byChange = [...shares].sort(
+      (a, b) => b.changePercent - a.changePercent,
+    );
+    return [
+      ...byChange.slice(0, 3),
+      ...byChange.slice(Math.max(3, byChange.length - 2)),
+    ];
+  }, [shares]);
 
   const [form, setForm] = useState({
     name: "",
@@ -80,7 +89,7 @@ export function Signup() {
         </p>
 
         <div className="auth__ticker">
-          {PREVIEW.map((stock) => {
+          {preview.map((stock) => {
             const up = stock.changePercent >= 0;
             return (
               <div className="auth__tick" key={stock.symbol}>
