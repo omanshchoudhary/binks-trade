@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./StockCard.css";
 import { ChangeBadge } from "./ChangeBadge";
 import { formatPrice } from "../utils/format";
@@ -5,7 +6,7 @@ import type { Share } from "@binks/types";
 
 export function StockCard({ stock }: { stock: Share }) {
   return (
-    <a className="stock-card" href={`/stock/${stock.symbol}`}>
+    <Link className="stock-card" to={`/shares/${stock.symbol}`}>
       <div className="stock-card__head">
         <span className="stock-card__symbol">{stock.symbol}</span>
         <span className="stock-card__name">{stock.name}</span>
@@ -16,6 +17,6 @@ export function StockCard({ stock }: { stock: Share }) {
         </span>
         <ChangeBadge value={stock.changePercent} />
       </div>
-    </a>
+    </Link>
   );
 }
