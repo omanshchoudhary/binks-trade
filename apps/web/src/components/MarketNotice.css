@@ -1,0 +1,128 @@
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  min-height: 44px;
+  margin-top: 18px;
+  padding: 8px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.notice__text {
+  margin-right: auto;
+  min-width: 0;
+  font-size: 12.5px;
+  color: var(--ink);
+}
+
+.notice__meta {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.notice .notice__action {
+  flex-shrink: 0;
+  padding: 5px 11px;
+}
+
+.notice__skel {
+  width: 232px;
+  height: 17.5px;
+}
+
+.notice--neutral .notice__text {
+  color: var(--ink-soft);
+}
+
+.notice--accent {
+  background: var(--notice-bg);
+  border-color: var(--notice-line);
+}
+
+.notice--danger {
+  background: var(--danger-bg);
+  border-color: var(--danger-line);
+}
+
+.notice--danger .notice__text {
+  color: var(--down);
+}
+
+.notice--danger .notice__action {
+  color: var(--down);
+  border-color: var(--danger-line);
+}
+
+.notice--danger .notice__action:hover:not(:disabled) {
+  background: rgba(224, 56, 43, 0.07);
+}
+
+.market-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 22px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.market-block__title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.market-block__body {
+  max-width: 54ch;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.market-block__action {
+  margin-top: 9px;
+}
+
+.market-block--danger {
+  background: var(--danger-bg);
+  border-color: var(--danger-line);
+}
+
+.market-block--danger .market-block__title {
+  color: var(--down);
+}
+
+.market-block--danger .market-block__action {
+  color: var(--down);
+  background: var(--surface);
+  border-color: var(--danger-line);
+}
+
+.market-block--danger .market-block__action:hover:not(:disabled) {
+  background: rgba(224, 56, 43, 0.07);
+}
+
+@media (max-width: 460px) {
+  .notice {
+    align-items: flex-start;
+    gap: 8px;
+    padding: 11px 13px;
+  }
+
+  .notice__text {
+    margin-right: 0;
+    flex: 1 1 100%;
+  }
+
+  .market-block {
+    padding: 18px 16px;
+  }
+}

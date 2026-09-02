@@ -1,0 +1,69 @@
+.notice + .market {
+  margin-top: 14px;
+}
+
+.stock-card.stock-card--skeleton,
+.trend-item.trend-item--skeleton {
+  cursor: default;
+  transition: none;
+}
+
+.stock-card.stock-card--skeleton:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  border-color: var(--line);
+}
+
+.trend-item.trend-item--skeleton:hover {
+  background: transparent;
+}
+
+.skel-bar {
+  display: block;
+}
+
+.skel-bar--card-symbol {
+  width: 68px;
+  height: 21px;
+}
+
+.skel-bar--card-name {
+  width: 106px;
+  height: 16.8px;
+}
+
+.skel-bar--card-price {
+  width: 76px;
+  height: 21px;
+}
+
+.skel-bar--card-change {
+  width: 54px;
+  height: 17.5px;
+}
+
+.skel-bar--trend-symbol {
+  width: 58px;
+  height: 18.9px;
+}
+
+.skel-bar--trend-name {
+  width: 94px;
+  height: 16.1px;
+}
+
+.skel-bar--trend-price {
+  width: 66px;
+  height: 18.9px;
+}
+
+.skel-bar--trend-change {
+  width: 46px;
+  height: 17.5px;
+}
+
+@media (max-width: 460px) {
+  .skel-bar--card-name {
+    width: 84px;
+  }
+}
