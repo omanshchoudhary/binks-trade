@@ -29,12 +29,14 @@ app.use(cookieParser());
 
 import sharesRouter from './routes/shares.js'
 import authRouter from './routes/auth.js'
+import ordersRouter from './routes/orders.js'
 import { errorHandler, notFound } from "./middlewares/error.js";
 
 
 // Routers
 app.use('/shares', sharesRouter);
 app.use('/auth', authRouter);
+app.use('/orders', ordersRouter);
 
 
 app.get("/health", (_req, res) => {
